@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.StockController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <MenuBar GridPane.rowIndex="0" GridPane.columnSpan="2">
+            <Menu text="View">
+                <MenuItem onAction="#getSellOffers" text="Stock offers" />
+                <MenuItem onAction="#getBuyOffers" text="Stock requests" />
+                <MenuItem onAction="#getAllTransactions" text="All Transactions" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <GridPane>
+            <Label GridPane.columnIndex="1" GridPane.rowSpan="3">Welcome</Label>
+            <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Number of stocks</Label>
+            <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Price of stocks</Label>
+
+            <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="nrStocks"/>
+            <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="priceStocks"/>
+
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="1" onAction="#startTransaction">Start transaction</Button>
+        </GridPane>
+    </center>
+</BorderPane>
