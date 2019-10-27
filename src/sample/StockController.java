@@ -42,7 +42,7 @@ public class StockController {
 
     public void startTransaction() {
         writer.println("offer");
-        writer.println(clientType + " " + socket.getPort());
+        writer.println(clientType + " " + socket.getLocalPort());
         writer.println(nrStocks.getText());
         writer.println(priceStocks.getText());
     }
