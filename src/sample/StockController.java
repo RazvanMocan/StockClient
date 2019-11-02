@@ -42,7 +42,7 @@ public class StockController {
 
     public void startTransaction() {
         writer.println("offer");
-        writer.println(clientType + " " + socket.getLocalPort());
+        writer.println(clientType + " " + socket.getPort());
         writer.println(nrStocks.getText());
         writer.println(priceStocks.getText());
     }
@@ -62,7 +62,14 @@ public class StockController {
         writer.println("Transactions");
         display();
     }
-
+    public void getAllOffers() {
+    	writer.println("All offers");
+    	display();
+    }
+    public void getAllOffersMine() {
+    	writer.println("My offers");
+    	display();
+    }
     private void display() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("list.fxml"));
@@ -70,7 +77,7 @@ public class StockController {
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.UTILITY);
-            stage.setTitle("ABC");
+            stage.setTitle("Exchange Stocks");
             stage.setScene(new Scene(root1));
             stage.show();
 

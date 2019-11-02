@@ -14,6 +14,8 @@
                 <MenuItem onAction="#getSellOffers" text="Stock offers" />
                 <MenuItem onAction="#getBuyOffers" text="Stock requests" />
                 <MenuItem onAction="#getAllTransactions" text="All Transactions" />
+                <MenuItem onAction="#getAllOffers" text="All Offers" />      
+                <MenuItem onAction="#getAllOffersMine" text="My Offers" />                               
             </Menu>
         </MenuBar>
     </top>
