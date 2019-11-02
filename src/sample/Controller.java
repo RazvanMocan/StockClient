@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.*;
 public class Controller {
-    private static final int port = 400;
+    private static final int port = 5000;
     private static String host = "localhost";
 
     private static Socket socket;
@@ -42,7 +42,6 @@ public class Controller {
         String clientType = ((Control) e.getSource()).getId();
         System.out.println(clientType);
         try {
-        	Random random = new Random();
             socket = new Socket(host, port);
             input = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));

@@ -26,6 +26,7 @@ public class StockController {
     private BufferedReader input;
 
     private static String clientType;
+    private int index = -1;
 
     public void setClientType(String clientType) {
         StockController.clientType = clientType;
@@ -42,34 +43,47 @@ public class StockController {
 
     public void startTransaction() {
         writer.println("offer");
-        writer.println(clientType + " " + socket.getPort());
+        String msg = clientType +  socket.getLocalPort();
+
+        if (index != -1)
+            msg += " index " + index;
+        writer.println(msg);
         writer.println(nrStocks.getText());
         writer.println(priceStocks.getText());
+
+        nrStocks.clear();
+        priceStocks.clear();
+        index = -1;
     }
 
     public void getBuyOffers() {
-        writer.println("Buy offers");
-        display();
+        getOffers("Buy offers");
     }
 
     public void getSellOffers() {
-        writer.println("Sell offers");
-        display();
+        getOffers("Sell offers");
     }
 
 
     public void getAllTransactions() {
-        writer.println("Transactions");
-        display();
+        getOffers("Transactions");
     }
     public void getAllOffers() {
-    	writer.println("All offers");
-    	display();
+        getOffers("All offers");
     }
+
     public void getAllOffersMine() {
-    	writer.println("My offers");
-    	display();
+        getOffers("My offers");
     }
+
+    private void getOffers(String s) {
+        writer.println(s);
+        display();
+        if (!s.equals("My offers"))
+            index = -1;
+    }
+
+
     private void display() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("list.fxml"));
@@ -79,7 +93,6 @@ public class StockController {
             stage.initStyle(StageStyle.UTILITY);
             stage.setTitle("Exchange Stocks");
             stage.setScene(new Scene(root1));
-            stage.show();
 
             List<String> l = new ArrayList<>();
             int size = Integer.parseInt(input.readLine());
@@ -89,6 +102,10 @@ public class StockController {
 
             ListController listController = fxmlLoader.getController();
             listController.updateList(l);
+
+            stage.showAndWait();
+
+            index = listController.selectedItem();
         } catch (Exception e) {
             e.printStackTrace();
         }
