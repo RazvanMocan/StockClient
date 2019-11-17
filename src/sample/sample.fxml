@@ -8,11 +8,11 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 
 <?import javafx.scene.layout.BorderPane?>
-<BorderPane fx:controller="sample.Controller"
+<BorderPane id="myPane" fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml" >
 
     <top>
-        <MenuBar GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <MenuBar id="myBar" GridPane.rowIndex="0" GridPane.columnSpan="2">
             <Menu text="File">
                 <MenuItem onAction="#selectServer" text="Server IP" />
                 <SeparatorMenuItem />
@@ -23,7 +23,7 @@
 
     <center>
         <GridPane alignment="center" hgap="10" vgap="10">
-            <Label GridPane.columnSpan="2" textAlignment="JUSTIFY">How do you feel today?</Label>
+            <Label GridPane.columnSpan="2" id="myIntrod" textAlignment="JUSTIFY">What do you feel like doing?</Label>
             <Button fx:id="Seller" text="Like Selling" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#selectType"/>
             <Button id="Buyer" text="Like Buying" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#selectType"/>
         </GridPane>
