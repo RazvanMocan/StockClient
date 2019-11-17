@@ -1,4 +1,4 @@
-package sample;
+package com.client;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -86,7 +86,7 @@ public class StockController {
 
     private void display() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("list.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/list.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);

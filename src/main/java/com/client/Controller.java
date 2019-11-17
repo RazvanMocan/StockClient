@@ -1,4 +1,4 @@
-package sample;
+package com.client;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -13,8 +13,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Optional;
-import java.util.Random;
-import java.util.*;
+
 public class Controller {
     private static final int port = 5000;
     private static String host = "localhost";
@@ -48,7 +47,7 @@ public class Controller {
             writer = new PrintWriter(socket.getOutputStream(), true);
             writer.println(clientType);
 
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stocks.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/stocks.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage = (Stage) ((Control) e.getSource()).getScene().getWindow();
 
