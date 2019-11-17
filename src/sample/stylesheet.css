@@ -1,0 +1,71 @@
+.root
+{
+-fx-background-color: "white";
+}
+.button{
+    -fx-text-fill: #2ECC40;
+-fx-background-color: "white";
+    -fx-border-color: #2ECC40;
+    -fx-border-radius: 0;
+    -fx-padding: 13 16 16 16;
+}
+.button:hover
+{
+-fx-background-color: #2ECC40;
+    -fx-text-fill: "white";
+    -fx-border-radius: 0;
+    -fx-border-color: "green";
+}
+#myIntrod
+{
+-fx-text-fill: #2ECC40;
+-fx-alignment: CENTER;
+    -fx-font-family: "Courier New";
+-fx-transition: 1s;
+}
+.menu
+{
+    -fx-text-fill: #2ECC40;
+-fx-background-color: "white";
+    -fx-padding: 3 6 6 6;
+    -fx-text-fill: #2ECC40;
+}
+.menu:hover
+{
+    -fx-text-fill: #2ECC40;
+-fx-background-color: #2ECC40;
+    -fx-text-fill: #2ECC40;
+}
+
+#aPane
+{
+    -fx-padding: 2 2 2 2;
+}
+#myLabel
+{
+    -fx-padding: 2 2 2 2;
+}
+#marginField
+{
+    -fx-padding: 5px;
+}
+#myLab
+{
+    -fx-padding: 6 6 6 6;
+}
+#lab
+{
+    -fx-text-fill: #2ECC40;
+}
+#field
+{
+    -fx-border-color: #2ECC40;
+}
+#menuIt:hover
+{
+-fx-background-color: #2ECC40;
+}
+#someId
+{
+-fx-background-color: #2ECC40;
+}
