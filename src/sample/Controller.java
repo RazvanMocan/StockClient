@@ -56,8 +56,9 @@ public class Controller {
 
             controller.setClientType(clientType);
             controller.setCommunication(socket, writer, input);
-
-            stage.setScene(new Scene(root1, 300, 300));
+            Scene changedCSS = new Scene(root1, 300, 300);
+            changedCSS.getStylesheets().add("stylesheet.css");
+            stage.setScene(changedCSS);
         } catch (Exception exc) {
             exc.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Error while establishing connection" + exc.getLocalizedMessage()).show();
