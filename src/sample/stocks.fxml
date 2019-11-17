@@ -11,25 +11,25 @@
     <top>
         <MenuBar GridPane.rowIndex="0" GridPane.columnSpan="2">
             <Menu text="View">
-                <MenuItem onAction="#getSellOffers" text="Stock offers" />
-                <MenuItem onAction="#getBuyOffers" text="Stock requests" />
-                <MenuItem onAction="#getAllTransactions" text="All Transactions" />
-                <MenuItem onAction="#getAllOffers" text="All Offers" />      
-                <MenuItem onAction="#getAllOffersMine" text="My Offers" />                               
+                <MenuItem id="menuIt" onAction="#getSellOffers" text="Stock offers" />
+                <MenuItem id="menuIt" onAction="#getBuyOffers" text="Stock requests" />
+                <MenuItem id="menuIt" onAction="#getAllTransactions" text="All Transactions" />
+                <MenuItem id="menuIt" onAction="#getAllOffers" text="All Offers" />      
+                <MenuItem id="menuIt" onAction="#getAllOffersMine" text="My Offers" />                               
             </Menu>
         </MenuBar>
     </top>
 
     <center>
-        <GridPane>
-            <Label GridPane.columnIndex="1" GridPane.rowSpan="3">Welcome</Label>
-            <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Number of stocks</Label>
-            <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Price of stocks</Label>
+        <GridPane hgap="10" vgap="10">
+            <Label id="lab" GridPane.columnIndex="2" GridPane.rowSpan="3"></Label>
+            <Label id="lab" GridPane.rowIndex="4" GridPane.columnIndex="1">Number of stocks</Label>
+            <Label id="lab" GridPane.rowIndex="5" GridPane.columnIndex="1">Price of stocks</Label>
 
-            <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" fx:id="nrStocks"/>
-            <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="priceStocks"/>
+            <TextField id="field" GridPane.rowIndex="4" GridPane.columnIndex="2" fx:id="nrStocks"/>
+            <TextField id="field" GridPane.rowIndex="5" GridPane.columnIndex="2" fx:id="priceStocks"/>
 
-            <Button GridPane.rowIndex="7" GridPane.columnIndex="1" onAction="#startTransaction">Start transaction</Button>
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="2" onAction="#startTransaction">Start transaction</Button>
         </GridPane>
     </center>
 </BorderPane>
