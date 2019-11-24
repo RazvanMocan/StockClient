@@ -22,7 +22,6 @@ public class Controller {
     private static PrintWriter writer;
     private static BufferedReader input;
 
-
     @FXML
     private Button Seller;
 
@@ -56,7 +55,7 @@ public class Controller {
             controller.setClientType(clientType);
             controller.setCommunication(socket, writer, input);
 
-            stage.setScene(new Scene(root1, 300, 300));
+            stage.setScene(new Scene(root1, 375, 300));
         } catch (Exception exc) {
             exc.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Error while establishing connection" + exc.getLocalizedMessage()).show();
