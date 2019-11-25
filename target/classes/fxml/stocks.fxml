@@ -21,13 +21,16 @@
     </top>
 
     <center>
-        <GridPane hgap="10" vgap="10">
+        <GridPane hgap="20" vgap="10">
             <Label id="lab" GridPane.columnIndex="2" GridPane.rowSpan="3"></Label>
             <Label id="lab" GridPane.rowIndex="4" GridPane.columnIndex="1">Number of stocks</Label>
             <Label id="lab" GridPane.rowIndex="5" GridPane.columnIndex="1">Price of stocks</Label>
 
             <TextField id="field" GridPane.rowIndex="4" GridPane.columnIndex="2" fx:id="nrStocks"/>
             <TextField id="field" GridPane.rowIndex="5" GridPane.columnIndex="2" fx:id="priceStocks"/>
+            
+            <Label id="lab" GridPane.rowIndex="4" GridPane.columnIndex="3" fx:id="nrOfStocksLabel"></Label>
+            <Label id="lab" GridPane.rowIndex="5" GridPane.columnIndex="3" fx:id="priceOfStocksLabel"></Label>
 
             <Button GridPane.rowIndex="7" GridPane.columnIndex="2" onAction="#startTransaction">Start transaction</Button>
         </GridPane>

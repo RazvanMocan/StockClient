@@ -9,7 +9,5 @@
             prefHeight="400.0" prefWidth="600.0"
             id="parent">
 
-    <ListView fx:id="listView" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0">
-
-    </ListView>
+    <ListView fx:id="listView" AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" onKeyPressed="#close"/>
 </AnchorPane>
