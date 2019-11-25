@@ -1,8 +1,12 @@
 package com.client;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.util.List;
 
@@ -20,8 +24,17 @@ public class ListController {
         l.addAll(list);
     }
 
+
+
     public int selectedItem() {
         return listView.getSelectionModel().getSelectedIndex();
+    }
+
+    public void close(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            Stage stage = (Stage)listView.getScene().getWindow();
+            stage.close();
+        }
     }
 }
 
