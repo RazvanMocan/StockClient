@@ -45,7 +45,8 @@ public class Controller {
                     new InputStreamReader(socket.getInputStream()));
             writer = new PrintWriter(socket.getOutputStream(), true);
             writer.println(clientType);
-
+            CustomInputChecker checkInp = new CustomInputChecker(input);
+            new Thread(checkInp).start();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/stocks.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage = (Stage) ((Control) e.getSource()).getScene().getWindow();
