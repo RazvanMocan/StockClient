@@ -56,6 +56,17 @@ public class Controller {
             controller.setCommunication(socket, writer, input);
 
             stage.setScene(new Scene(root1, 375, 300));
+            Platform.runLater(new Runnable() {
+                public void run() {
+                  while(true)
+                  {
+                    if(input.readLine().length()>1){
+                        new Alert(Alert.AlertType.INFORMATION, "A transaction has been completed").show();                                
+                    }
+
+                  }
+            });
+
         } catch (Exception exc) {
             exc.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Error while establishing connection" + exc.getLocalizedMessage()).show();
