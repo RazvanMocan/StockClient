@@ -28,11 +28,16 @@ public class Controller {
 
     static void closeConnections()  {
         try {
-            writer.println("end");
-            input.close();
-            writer.close();
-            socket.close();
-        } catch (Exception e) {
+            if (writer != null) {
+                writer.println("end");
+                writer.close();
+            }
+            if (input != null)
+                input.close();
+            if (socket != null)
+                socket.close();
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -55,20 +60,9 @@ public class Controller {
 
             controller.setClientType(clientType);
             controller.setCommunication(socket, writer, input);
-            controller.initialize();
+//            controller.initialize();
 
             stage.setScene(new Scene(root1, 375, 300));
-            Platform.runLater(new Runnable() {
-                public void run() {
-                  while(true)
-                  {
-                    if(input.readLine().length()>1){
-                        new Alert(Alert.AlertType.INFORMATION, "A transaction has been completed").show();                                
-                    }
-
-                  }
-            });
-
         } catch (Exception exc) {
             exc.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "Error while establishing connection" + exc.getLocalizedMessage()).show();

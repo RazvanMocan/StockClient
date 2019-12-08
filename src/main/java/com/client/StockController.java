@@ -42,21 +42,22 @@ public class StockController {
     private int index = -1;
 
     public void initialize() {
+        System.out.println("init");
         new Thread(() -> {
-            while (!socket.isInputShutdown()) {
+            while (!socket.isClosed()) {
                 try {
-                    String s = input.readLine();
-                    if (!s.startsWith("notif")) {
-                        System.out.println("---" + s + "------");
-                        int size = Integer.parseInt(s);
-                        ArrayList<String> l = new ArrayList<>();
-                        for (int i = 0; i < size; i++) {
-                            l.add(input.readLine());
-                        }
-                        Platform.runLater(() -> display(size, l));
+                    if (input.ready()) {
+                        String s = input.readLine();
+                        if (!s.startsWith("notif")) {
+                            int size = Integer.parseInt(s);
+                            ArrayList<String> l = new ArrayList<>();
+                            for (int i = 0; i < size; i++) {
+                                l.add(input.readLine());
+                            }
+                            Platform.runLater(() -> display(size, l));
+                        } else
+                            Platform.runLater(() -> notif(s.replace("notif", "")));
                     }
-                    else
-                        Platform.runLater(() -> notif(s.replace("notif", "")));
 
                 } catch (IOException e) {
                     e.printStackTrace();
