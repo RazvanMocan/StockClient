@@ -19,7 +19,7 @@ public CustomInputChecker(BufferedReader buffRdr){
       while(true)
       {
         try {
-			if(buffRead.readLine().length()>1){          
+			if(buffRead.readLine().startsWith("Transaction finished")){          
 			                Platform.runLater(new Runnable() {public void run() {new Alert(Alert.AlertType.INFORMATION, "A transaction has been completed").show();}});
 			
 			}
