@@ -13,6 +13,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Optional;
+import java.util.concurrent.locks.Lock;
 
 public class Controller {
     private static final int port = 5000;
@@ -54,6 +55,7 @@ public class Controller {
 
             controller.setClientType(clientType);
             controller.setCommunication(socket, writer, input);
+            controller.initialize();
 
             stage.setScene(new Scene(root1, 375, 300));
             Platform.runLater(new Runnable() {
